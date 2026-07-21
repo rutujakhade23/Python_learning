@@ -84,3 +84,34 @@ p3.get_info()
 Product.get_count()
 
 p1.calc_discount(10_000, 12)
+
+
+class BankAccount:
+    def __init__(self, name, balance):
+        self.name = name #public
+        self.__balance = balance #private --- data mangling
+    def get_balance(self):  #getter
+        return self.__balance
+
+
+acc1 = BankAccount("Rahul Kumar", 100_000)
+
+print(acc1.name, acc1.get_balance())
+
+class Employee:
+    start_time = "10am"
+    end_time = "6pm"
+
+class Teacher(Employee):
+    def __init__(self, subject):
+        self.subject = subject
+
+class AdminStaff(Employee):
+    def __init__(self, role):
+        self.role = role
+
+t1 = Teacher("Math")
+print(t1.subject, t1.start_time, t1.end_time)
+
+staff1 = AdminStaff("manager")
+print(staff1.role, staff1.start_time, staff1.end_time)
